@@ -1,4 +1,7 @@
+import About from "@/components/mejor/About";
+import Banner from "@/components/mejor/Banner";
 import Navbar from "@/components/mejor/Navbar";
+import Skills from "@/components/mejor/Skills";
 
 const particles = Array.from({ length: 40 }, (_, i) => ({
   left: `${Math.random() * 100}%`,
@@ -51,7 +54,12 @@ export default function Home({ children }) {
       {/* Website Content */}
       <div className="relative z-10">
         <Navbar />
-        <div className="w-[94%] md:w-[85%] mx-auto">{children}</div>
+        <div className="w-[93%] md:w-[74%] lg:w-[83%] mx-auto">
+          <Banner />
+          <About />
+          <Skills />
+          {children}
+        </div>
       </div>
 
       <style>{`

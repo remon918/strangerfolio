@@ -11,23 +11,40 @@ export default function CustomCursor() {
   });
 
   const [isHovering, setIsHovering] = useState(false);
-  const [trail, setTrail] = useState([]);
+
+  // colorful glow particles
+  const [particles, setParticles] = useState([]);
 
   useEffect(() => {
     const moveCursor = (e) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
 
-      setTrail((prev) => [
-        ...prev,
-        {
-          x: e.clientX,
-          y: e.clientY,
-          id: Date.now() + Math.random(),
-        },
-      ].slice(-12)); // last 12 dots
+      // create particle
+      const particle = {
+        id: Date.now() + Math.random(),
+        x: e.clientX,
+        y: e.clientY,
+        size: Math.random() * 10 + 4,
+        color: [
+          "#a855f7",
+          "#22c55e",
+          "#06b6d4",
+          "#f59e0b",
+        ][Math.floor(Math.random() * 4)],
+      };
+
+      setParticles((prev) => [...prev, particle]);
+
+      // remove particle
+      setTimeout(() => {
+        setParticles((prev) =>
+          prev.filter((p) => p.id !== particle.id)
+        );
+      }, 500);
     };
 
+    // hover detect
     const handleMouseOver = (e) => {
       if (
         e.target.closest("button") ||
@@ -67,25 +84,21 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Trail */}
-      {trail.map((dot, index) => {
-        const size = (trail.length - index) * 0.5 + 3;
-
-        return (
-          <div
-            key={dot.id}
-            className="fixed top-0 left-0 rounded-full bg-purple-400 pointer-events-none z-[9998]"
-            style={{
-              width: `${size}px`,
-              height: `${size}px`,
-              opacity: index / trail.length,
-              transform: `translate(${dot.x}px, ${dot.y}px)`,
-              boxShadow: "0 0 10px #a855f7",
-              transition: "all 0.15s linear",
-            }}
-          />
-        );
-      })}
+      {/* Glow Trail */}
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="particle"
+          style={{
+            left: p.x,
+            top: p.y,
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            background: p.color,
+            boxShadow: `0 0 20px ${p.color}`,
+          }}
+        />
+      ))}
 
       {/* Main Cursor */}
       <div
@@ -122,6 +135,27 @@ export default function CustomCursor() {
       <style jsx global>{`
         * {
           cursor: none;
+        }
+
+        .particle {
+          position: fixed;
+          border-radius: 9999px;
+          pointer-events: none;
+          z-index: 9998;
+
+          animation: fadeOut 0.5s linear forwards;
+        }
+
+        @keyframes fadeOut {
+          0% {
+            opacity: 0.9;
+            transform: translate(-50%, -50%) scale(1);
+          }
+
+          100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+          }
         }
       `}</style>
     </>

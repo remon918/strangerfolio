@@ -5,7 +5,7 @@ import DropDown from '../minor/DropDown';
 
 const Navbar = () => {
     return (
-        <nav className='text-white bg-[#0a0a0a]/80 backdrop-blur-md sticky top-0 z-[100] border-b border-white/10'>
+        <nav className='text-white bg-[#0a0a0a]/80 backdrop-blur-md sticky top-0 z-[100] border-b border-white/10 md:px-30'>
             <div className="flex justify-between items-center mx-auto p-5 md:p-6">
                 {/* Logo */}
                 <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">

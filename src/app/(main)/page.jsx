@@ -5,18 +5,14 @@ const particles = Array.from({ length: 40 }, (_, i) => ({
   delay: `${Math.random() * 5}s`,
   duration: `${Math.random() * 5 + 4}s`,
   size: `${Math.random() * 6 + 2}px`,
-  color: [
-    "bg-purple-600",
-    "bg-emerald-500",
-    "bg-amber-400",
-    "bg-cyan-400",
-  ][Math.floor(Math.random() * 4)],
+  color: ["bg-purple-600", "bg-emerald-500", "bg-amber-400", "bg-cyan-400"][
+    Math.floor(Math.random() * 4)
+  ],
 }));
 
-export default function Home({children}) {
+export default function Home({ children }) {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#0a0a0f] font-sans">
-      
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,37,210,0.18),transparent_45%)] pointer-events-none" />
 
@@ -53,9 +49,9 @@ export default function Home({children}) {
       </div>
 
       {/* Website Content */}
-      <div className="relative z-10 w-[94%] md:w-[85%] mx-auto">
+      <div className="relative z-10">
         <Navbar />
-        {children}
+        <div className="w-[94%] md:w-[85%] mx-auto">{children}</div>
       </div>
 
       <style>{`

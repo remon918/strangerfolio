@@ -3,6 +3,7 @@ import Banner from "@/components/mejor/Banner";
 import Contact from "@/components/mejor/Contact";
 import Education from "@/components/mejor/Education";
 import Navbar from "@/components/mejor/Navbar";
+import Projects from "@/components/mejor/Projects";
 import Skills from "@/components/mejor/Skills";
 
 const particles = Array.from({ length: 40 }, (_, i) => ({
@@ -66,6 +67,7 @@ export default function Home({ children }) {
           <About />
           <Education />
           <Skills />
+          <Projects />
           <Contact />
           {children}
         </div>

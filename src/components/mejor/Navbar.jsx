@@ -1,13 +1,13 @@
 import { Button } from "@heroui/react";
 import Link from "next/link";
-import logo from "@/assets/logo100.png";
+import logo from "@/assets/logo01.png";
 import DropDown from "../minor/DropDown";
 import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="text-white bg-[#0a0a0a]/30 backdrop-blur-md sticky top-0 z-[100] border-b border-white/10 md:px-30">
-      <div className="flex justify-between items-center mx-auto p-5 md:p-6">
+    <nav className="text-white bg-[#0a0a0a]/60 backdrop-blur-md sticky top-0 z-[100] border-b border-white/10 md:px-30">
+      <div className="flex justify-between items-center mx-auto px-5 md:px-6">
         {/* Logo */}
         <Link
           href="#"
@@ -15,8 +15,8 @@ const Navbar = () => {
           <Image
             src={logo}
             alt="Logo"
-            width={160}
-            height={107}
+            width={150}
+            height={50}
             className="inline-block mr-2 logoAnimate "
           />
         </Link>

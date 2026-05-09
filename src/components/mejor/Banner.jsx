@@ -1,54 +1,119 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import banner from "@/assets/user.png";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { motion, useInView } from "framer-motion";
+
+// ✅ প্রতিবার scroll করে element দেখা গেলে animation চালাতে amount:"all" ও once:false রাখো
+const useScrollAnimation = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  return { ref, isInView };
+};
+
+// ✅ Animation variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut", delay },
+  }),
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -80 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut", delay },
+  }),
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 80 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut", delay },
+  }),
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.9, ease: "easeOut", delay },
+  }),
+};
 
 const Banner = () => {
+  // ✅ প্রতিটি element এর জন্য আলাদা ref ব্যবহার করা হয়েছে
+  const { ref: sectionRef, isInView } = useScrollAnimation();
+
   return (
-    <div className="text-white">
+    <div className="text-white" ref={sectionRef}>
       <div className="flex justify-around items-center gap-25 my-10 md:my-55 md:flex-row flex-col-reverse">
-        
-        {/* Left Content */}
+        {/* ===== Left Content ===== */}
         <div>
-          <h2 className="text-xl font-bold">
-            
-            <span className="text-xs font-bold text-pink-400 block">
-              Welcome Here 💐<br /> I am,
-            </span>
+          {/* Welcome text */}
+          <motion.span
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={0}
+            className="text-xs font-bold mb-4 text-pink-400 block"
+          >
+            Welcome Here 💐
+            <br /> I am,
+          </motion.span>
 
-            <br />
-
-            {/* Name */}
+          <h2 className="text-xl font-bold mt-2">
+            {/* Name lines */}
             <div className="flex gap-4 flex-col">
-              <span className="text-5xl md:text-7xl font-black tracking-wide">
+              <motion.span
+                variants={fadeLeft}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                custom={0.15}
+                className="text-5xl md:text-7xl font-black tracking-wide"
+              >
                 REMON
-              </span>
+              </motion.span>
 
-              <span className="text-5xl md:text-7xl font-black tracking-wide">
+              <motion.span
+                variants={fadeLeft}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                custom={0.3}
+                /* Niche class gulo add kora hoyeche */
+                className="text-5xl md:text-7xl font-black tracking-wide bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+              >
                 HOSSAIN
-              </span>
+              </motion.span>
             </div>
 
-
             {/* Typing Animation */}
-            <div className="text-lg md:text-xl font-semibold mt-6 text-gray-400 h-[40px]">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              custom={0.5}
+              className="text-lg md:text-xl font-semibold mt-6 text-gray-400 h-[40px]"
+            >
               I am a{" "}
-              
               <TypeAnimation
                 sequence={[
                   "Frontend Developer.",
                   2000,
-
                   "MERN Stack Developer.",
                   2000,
-
                   "React Specialist.",
                   2000,
-
                   "UI/UX Specialist.",
                   2000,
-
                   "Next.js Developer.",
                   2000,
                 ]}
@@ -57,15 +122,29 @@ const Banner = () => {
                 repeat={Infinity}
                 className="text-purple-400"
               />
-            </div>
+            </motion.div>
           </h2>
-          <h3 className="text-gray-400">
-            A React developer from Bangladesh, obsessed with clean UI and smooth animations.
-          </h3>
+
+          {/* Description */}
+          <motion.h3
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={0.65}
+            className="text-gray-400 mt-3"
+          >
+            A React developer from Bangladesh, obsessed with clean UI and smooth
+            animations.
+          </motion.h3>
         </div>
 
-        {/* Right Image */}
-        <div>
+        {/* ===== Right Image ===== */}
+        <motion.div
+          variants={scaleIn}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={0.2}
+        >
           <Image
             src={banner}
             alt="Banner"
@@ -76,7 +155,7 @@ const Banner = () => {
               object-cover
             "
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

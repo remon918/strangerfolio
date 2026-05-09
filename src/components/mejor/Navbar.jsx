@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center mx-auto p-5 md:p-6">
         {/* Logo */}
         <Link
-          href="/"
+          href="#"
         >
           <Image
             src={logo}
@@ -56,7 +56,9 @@ const Navbar = () => {
           >
             Contact
           </Link>
-          <Button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 rounded-full transition-all">
+          <Button
+          suppressHydrationWarning
+          className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 rounded-full transition-all">
             Hire Me
           </Button>
         </div>

@@ -30,11 +30,11 @@ const DropDown = () => {
           <ul className="absolute right-0 mt-4 w-60 bg-[#141414] border border-white/10 rounded-2xl shadow-2xl z-[105] py-3 animate-in fade-in slide-in-from-top-5 duration-200">
             {[
               { label: "Home", path: "/" },
-              { label: "About", path: "/about" },
-              { label: "Education", path: "/education" },
-              { label: "Skill", path: "/skill" },
-              { label: "Projects", path: "/projects" },
-              { label: "Contact", path: "/contact" },
+              { label: "About", path: "#about" },
+              { label: "Education", path: "#education" },
+              { label: "Skill", path: "#skill" },
+              { label: "Projects", path: "#projects" },
+              { label: "Contact", path: "#contact" },
             ].map((item) => (
               <li key={item.label}>
                 <Link 

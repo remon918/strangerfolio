@@ -10,7 +10,7 @@ const DropDown = () => {
       {/* Hamburger Toggle Button */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="flex flex-col gap-1.5 p-2 focus:outline-none z-[110] relative"
+        className="flex flex-col gap-1.5 p-2 focus:outline-none z-110 relative"
         suppressHydrationWarning={true} 
       >
         <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}></span>
@@ -23,11 +23,11 @@ const DropDown = () => {
         <>
           {/* Background overlay to close menu on click outside */}
           <div 
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100]" 
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-100" 
             onClick={() => setMenuOpen(false)}
           ></div>
           
-          <ul className="absolute right-0 mt-4 w-60 bg-[#141414] border border-white/10 rounded-2xl shadow-2xl z-[105] py-3 animate-in fade-in slide-in-from-top-5 duration-200">
+          <ul className="absolute right-0 mt-4 w-60 bg-[#141414] border border-white/10 rounded-2xl shadow-2xl z-105 py-3 animate-in fade-in slide-in-from-top-5 duration-200">
             {[
               { label: "Home", path: "/" },
               { label: "About", path: "#about" },

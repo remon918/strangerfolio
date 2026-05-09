@@ -103,7 +103,7 @@ export default function CustomCursor() {
       {/* Main Cursor */}
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 z-[9999] pointer-events-none -translate-x-1/2 -translate-y-1/2"
+        className="fixed top-0 left-0 z-9999 pointer-events-none -translate-x-1/2 -translate-y-1/2"
       >
         <div
           className={`

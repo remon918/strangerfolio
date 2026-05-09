@@ -2,6 +2,7 @@ import About from "@/components/mejor/About";
 import Banner from "@/components/mejor/Banner";
 import Contact from "@/components/mejor/Contact";
 import Education from "@/components/mejor/Education";
+import Footer from "@/components/mejor/Footer";
 import Navbar from "@/components/mejor/Navbar";
 import Projects from "@/components/mejor/Projects";
 import Skills from "@/components/mejor/Skills";
@@ -45,7 +46,7 @@ export default function Home({ children }) {
         {particles.map((p, i) => (
           <span
             key={i}
-            className={`absolute bottom-[-20px] rounded-full ${p.color} animate-float`}
+            className={`absolute -bottom-5 rounded-full ${p.color} animate-float`}
             style={{
               left: p.left,
               width: p.size,
@@ -70,6 +71,7 @@ export default function Home({ children }) {
           <Projects />
           <Contact />
           {children}
+          <Footer />
         </div>
       </div>
 

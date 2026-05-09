@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -22,17 +22,17 @@ const About = () => {
 
   return (
     <motion.section
-  className="text-white my-30 scroll-mt-10"
-  id="about"
-  initial="hidden"
-  whileInView="visible"
-  // once: false dilei prottekbar scroll korle animation hobe
-  viewport={{ once: false, amount: 0.2 }} 
-  variants={containerVariants}
->
+      className="text-white my-30 md:scroll-mt-20"
+      id="about"
+      initial="hidden"
+      whileInView="visible"
+      // once: false dilei prottekbar scroll korle animation hobe
+      viewport={{ once: false, amount: 0.2 }}
+      variants={containerVariants}
+    >
       {/* Section Title */}
       <div className="text-center">
-        <motion.h2 
+        <motion.h2
           variants={itemVariants}
           className="text-3xl font-bold mb-8 uppercase tracking-widest border-b-2 border-purple-600 inline-block mx-auto w-fit"
         >
@@ -42,7 +42,7 @@ const About = () => {
 
       <div className="mt-8">
         {/* Heading Specialist */}
-        <motion.h3 
+        <motion.h3
           variants={itemVariants}
           className="text-2xl font-bold text-purple-400 mb-4"
         >
@@ -50,7 +50,7 @@ const About = () => {
         </motion.h3>
 
         {/* Introduction Paragraph */}
-        <motion.p 
+        <motion.p
           variants={itemVariants}
           className="italic text-gray-400 mb-8 leading-relaxed"
         >
@@ -71,7 +71,7 @@ const About = () => {
             { label: "Focus", value: "BackEnd Development" },
             { label: "Status", value: "Available for Hire", isStatus: true },
           ].map((info, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ x: 10 }} // Mouse nibele ektu move korbe
@@ -89,7 +89,7 @@ const About = () => {
         </div>
 
         {/* Closing Description */}
-        <motion.p 
+        <motion.p
           variants={itemVariants}
           whileHover={{ scale: 1.02 }}
           className="text-gray-300 leading-relaxed border-l-4 border-purple-600 pl-4 bg-white/5 py-4 shadow-lg transition-colors hover:bg-white/10"

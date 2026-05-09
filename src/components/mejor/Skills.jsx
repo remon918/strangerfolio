@@ -66,7 +66,7 @@ const Skills = () => {
 
   return (
     <section
-      className="relative overflow-hidden text-white scroll-mt-10 my-30 pt-10"
+      className="relative overflow-hidden text-white md:scroll-mt-10 my-30 pt-10"
       id="skill"
     >
       {/* Animated Background */}

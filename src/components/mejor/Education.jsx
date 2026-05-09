@@ -83,7 +83,7 @@ const Education = () => {
 
   return (
     <section
-      className="relative overflow-hidden text-white scroll-mt-10 mt-30 mb-20 pt-10"
+      className="relative overflow-hidden text-white md:scroll-mt-10 mt-30 mb-20 pt-10"
       id="education"
     >
       {/* Animated Background */}
@@ -182,7 +182,7 @@ const Education = () => {
                       repeat: Infinity,
                       duration: 2,
                     }}
-                    className="absolute -left-[41px] top-0 w-5 h-5 bg-purple-600 rounded-full border-4 border-[#050505]"
+                    className="absolute -left-10.25 top-0 w-5 h-5 bg-purple-600 rounded-full border-4 border-[#050505]"
                   ></motion.div>
 
                   {/* Card */}

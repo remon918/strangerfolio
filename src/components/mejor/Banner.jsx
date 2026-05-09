@@ -89,7 +89,7 @@ const Banner = () => {
                 animate={isInView ? "visible" : "hidden"}
                 custom={0.3}
                 /* Niche class gulo add kora hoyeche */
-                className="text-5xl md:text-7xl font-black tracking-wide bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+                className="text-5xl md:text-7xl font-black tracking-wide bg-linear-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
               >
                 HOSSAIN
               </motion.span>
@@ -101,7 +101,7 @@ const Banner = () => {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               custom={0.5}
-              className="text-lg md:text-xl font-semibold mt-6 text-gray-400 h-[40px]"
+              className="text-lg md:text-xl font-semibold mt-6 text-gray-400 h-10"
             >
               I am a{" "}
               <TypeAnimation

@@ -1,5 +1,6 @@
 import About from "@/components/mejor/About";
 import Banner from "@/components/mejor/Banner";
+import Contact from "@/components/mejor/Contact";
 import Education from "@/components/mejor/Education";
 import Navbar from "@/components/mejor/Navbar";
 import Skills from "@/components/mejor/Skills";
@@ -65,6 +66,7 @@ export default function Home({ children }) {
           <About />
           <Education />
           <Skills />
+          <Contact />
           {children}
         </div>
       </div>

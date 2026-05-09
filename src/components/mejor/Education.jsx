@@ -38,7 +38,7 @@ const Education = () => {
     ];
 
     return (
-        <section className="text-white mt-30">
+        <section className="text-white scroll-mt-10 mt-30 mb-20" id="education">
             <div className="">
                 {/* Header */}
                 <div className="text-center mb-16">

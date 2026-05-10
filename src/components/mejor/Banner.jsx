@@ -4,15 +4,16 @@ import banner from "@/assets/user.png";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion, useInView } from "framer-motion";
+import { Button } from "@heroui/react";
+import { TbExternalLink } from "react-icons/tb";
+import { RiContactsFill } from "react-icons/ri";
 
-// ✅ প্রতিবার scroll করে element দেখা গেলে animation চালাতে amount:"all" ও once:false রাখো
 const useScrollAnimation = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
   return { ref, isInView };
 };
 
-// ✅ Animation variants
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
   visible: (delay = 0) => ({
@@ -50,15 +51,12 @@ const scaleIn = {
 };
 
 const Banner = () => {
-  // ✅ প্রতিটি element এর জন্য আলাদা ref ব্যবহার করা হয়েছে
   const { ref: sectionRef, isInView } = useScrollAnimation();
 
   return (
     <div className="text-white" ref={sectionRef}>
-      <div className="flex justify-around items-center gap-25 my-10 md:my-55 md:flex-row flex-col-reverse">
-        {/* ===== Left Content ===== */}
+      <div className="flex justify-around items-center gap-25 my-15 md:my-40 md:flex-row flex-col-reverse">
         <div>
-          {/* Welcome text */}
           <motion.span
             variants={fadeUp}
             initial="hidden"
@@ -136,6 +134,47 @@ const Banner = () => {
             A React developer from Bangladesh, obsessed with clean UI and smooth
             animations.
           </motion.h3>
+
+          <div className="flex items-center gap-2">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              custom={0.8}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button
+                suppressHydrationWarning
+                radius="full"
+                className="bg-purple-600/70 hover:bg-purple-700 text-white font-semibold px-6 py-6 mt-8"
+              >
+                <a href="#projects" className="flex items-center gap-2">
+                  View Projects
+                  <TbExternalLink size={18} />
+                </a>
+              </Button>
+            </motion.div>
+            <motion.div
+                variants={fadeUp}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              custom={0.8}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button
+                suppressHydrationWarning
+                radius="full"
+                className="bg-blue-900/10 hover:bg-blue-700 text-white font-semibold px-6 py-6 mt-8 border border-blue-100/20"
+              >
+                <a href="#contact" className="flex items-center gap-2">
+                  Contact Me
+                  <RiContactsFill />
+                </a>
+              </Button>
+            </motion.div>
+          </div>
         </div>
 
         {/* ===== Right Image ===== */}
@@ -149,7 +188,7 @@ const Banner = () => {
             src={banner}
             alt="Banner"
             className="
-              w-70 h-70 rounded-full
+              w-90 h-90 rounded-full
               shadow-[0_0_40px_#7e22ce]
               border border-purple-600
               object-cover

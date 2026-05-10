@@ -199,9 +199,6 @@ const Projects = () => {
         </motion.p>
       </motion.div>
 
-      {/* Cards */}
-      {/* Cards */}
-      {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
         <AnimatePresence mode="wait">
           {visibleProjects.map((project, index) => (
@@ -251,13 +248,10 @@ const Projects = () => {
                       />
                     </motion.div>
 
-                    {/* Overlay */}
                     <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent"></div>
                   </div>
 
-                  {/* Content */}
                   <div className="p-6">
-                    {/* Tech Stack */}
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -285,7 +279,6 @@ const Projects = () => {
                       ))}
                     </motion.div>
 
-                    {/* Title */}
                     <motion.h3
                       initial={{ opacity: 0, x: -40 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -298,7 +291,6 @@ const Projects = () => {
                       {project.title}
                     </motion.h3>
 
-                    {/* Description */}
                     <motion.p
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -312,7 +304,6 @@ const Projects = () => {
                       {project.description}
                     </motion.p>
 
-                    {/* Buttons */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -323,7 +314,6 @@ const Projects = () => {
                       viewport={{ once: true }}
                       className="flex items-center gap-4"
                     >
-                      {/* Live */}
                       <motion.div
                         whileHover={{
                           scale: 1.05,

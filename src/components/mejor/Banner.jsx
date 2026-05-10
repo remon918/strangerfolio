@@ -52,7 +52,6 @@ const scaleIn = {
 
 const Banner = () => {
   const { ref: sectionRef, isInView } = useScrollAnimation();
-
   return (
     <div className="text-white" ref={sectionRef}>
       <div className="flex justify-around items-center gap-25 my-15 md:my-40 md:flex-row flex-col-reverse">
@@ -86,14 +85,12 @@ const Banner = () => {
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
                 custom={0.3}
-                /* Niche class gulo add kora hoyeche */
                 className="text-5xl md:text-7xl font-black tracking-wide bg-linear-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
               >
                 HOSSAIN
               </motion.span>
             </div>
 
-            {/* Typing Animation */}
             <motion.div
               variants={fadeUp}
               initial="hidden"

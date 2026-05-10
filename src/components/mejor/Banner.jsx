@@ -185,7 +185,7 @@ const Banner = () => {
             src={banner}
             alt="Banner"
             className="
-              w-90 h-90 rounded-full
+              w-60 h-60 md:w-80 md:h-80 rounded-full
               shadow-[0_0_40px_#7e22ce]
               border border-purple-600
               object-cover

@@ -165,7 +165,7 @@ const Banner = () => {
                 radius="full"
                 className="bg-blue-900/10 hover:bg-blue-700 text-white font-semibold px-6 py-6 mt-8 border border-blue-100/20"
               >
-                <a href="#contact" className="flex items-center gap-2">
+                <a href="/Resume-is-not-added-yet" className="flex items-center gap-2">
                   <DownloadIcon />
                   Download CV
                 </a>
@@ -185,7 +185,7 @@ const Banner = () => {
             src={banner}
             alt="Banner"
             className="
-              w-55 h-55 md:w-70 md:h-70 lg:w-80 lg:h-80 rounded-full
+              w-55 h-55 md:w-70 md:h-70 lg:w-70 lg:h-70 rounded-full
               shadow-[0_0_40px_#7e22ce]
               border border-purple-600
               object-cover

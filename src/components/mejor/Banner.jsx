@@ -1,12 +1,12 @@
 "use client";
 import React, { useRef } from "react";
-import banner from "@/assets/user.png";
+import banner from "@/assets/my-image.png";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@heroui/react";
 import { TbExternalLink } from "react-icons/tb";
-import { RiContactsFill } from "react-icons/ri";
+import { DownloadIcon } from "lucide-react";
 
 const useScrollAnimation = () => {
   const ref = useRef(null);
@@ -63,7 +63,7 @@ const Banner = () => {
             custom={0}
             className="text-xs font-bold mb-4 text-pink-400 block"
           >
-            Welcome Here 💐
+            Welcome Here 🌟
             <br /> I am,
           </motion.span>
 
@@ -144,7 +144,7 @@ const Banner = () => {
               <Button
                 suppressHydrationWarning
                 radius="full"
-                className="bg-purple-600/70 hover:bg-purple-700 text-white font-semibold px-6 py-6 mt-8"
+                className="bg-purple-600/55 hover:bg-purple-700 text-white font-semibold px-6 py-6 mt-8"
               >
                 <a href="#projects" className="flex items-center gap-2">
                   View Projects
@@ -153,7 +153,7 @@ const Banner = () => {
               </Button>
             </motion.div>
             <motion.div
-                variants={fadeUp}
+              variants={fadeUp}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               custom={0.8}
@@ -166,8 +166,8 @@ const Banner = () => {
                 className="bg-blue-900/10 hover:bg-blue-700 text-white font-semibold px-6 py-6 mt-8 border border-blue-100/20"
               >
                 <a href="#contact" className="flex items-center gap-2">
-                  Contact Me
-                  <RiContactsFill />
+                  <DownloadIcon />
+                  Download CV
                 </a>
               </Button>
             </motion.div>
@@ -185,7 +185,7 @@ const Banner = () => {
             src={banner}
             alt="Banner"
             className="
-              w-60 h-60 md:w-80 md:h-80 rounded-full
+              w-55 h-55 md:w-70 md:h-70 lg:w-80 lg:h-80 rounded-full
               shadow-[0_0_40px_#7e22ce]
               border border-purple-600
               object-cover

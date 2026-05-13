@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { Button } from "@heroui/react";
 
 const DropDown = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,9 +48,17 @@ const DropDown = () => {
               </li>
             ))}
             <div className="px-5 mt-2">
-                <button className="w-full bg-purple-600 py-3 rounded-xl font-bold text-white">
-                    Hire Me
-                </button>
+                <Link
+            href="#contact"
+            
+          >
+            <Button
+              suppressHydrationWarning
+              className="bg-purple-600 w-full hover:bg-purple-700 text-white font-semibold px-6 rounded-md transition-all"
+            >
+              Hire Me
+            </Button>
+          </Link>
             </div>
           </ul>
         </>

@@ -231,7 +231,7 @@ export default function Footer() {
         .footer-inner {
           position: relative;
           z-index: 1;
-          max-width: 1200px;
+          max-width: 1270px;
           margin: 0 auto;
           padding: 60px 40px 0;
         }

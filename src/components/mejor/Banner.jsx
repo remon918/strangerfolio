@@ -165,7 +165,7 @@ const Banner = () => {
                 radius="full"
                 className="bg-blue-900/10 hover:bg-blue-700 text-white font-semibold px-6 py-6 mt-8 border border-blue-100/20"
               >
-                <a href="https://drive.google.com/file/d/1lXhnD6zROhCLWgrR8kn4LsBeV9ICYDKB/view?usp=sharing" className="flex items-center gap-2">
+                <a href="https://drive.google.com/file/d/1u5YpGtcWPheyNqjWBSz2oejHou5JuLzx/view?usp=sharing" className="flex items-center gap-2">
                   <DownloadIcon />
                   Download CV
                 </a>

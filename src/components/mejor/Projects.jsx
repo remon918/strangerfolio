@@ -138,7 +138,7 @@ const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   // NEW
-  const visibleProjects = showAll ? projects : projects.slice(0, 4);
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -199,7 +199,7 @@ const Projects = () => {
         </motion.p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-hidden">
         <AnimatePresence mode="wait">
           {visibleProjects.map((project, index) => (
             <motion.div
@@ -251,7 +251,7 @@ const Projects = () => {
                     <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent"></div>
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-3">
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -259,7 +259,7 @@ const Projects = () => {
                         delay: 0.2,
                       }}
                       viewport={{ once: true }}
-                      className="flex flex-wrap gap-2 mb-5"
+                      className="flex flex-wrap gap-2 mb-3"
                     >
                       {project.tech.map((tech, index) => (
                         <motion.div
@@ -286,7 +286,7 @@ const Projects = () => {
                         duration: 0.7,
                       }}
                       viewport={{ once: true }}
-                      className="text-2xl font-bold mb-4 group-hover:text-purple-400 transition-colors"
+                      className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors"
                     >
                       {project.title}
                     </motion.h3>
@@ -299,7 +299,7 @@ const Projects = () => {
                         delay: 0.2,
                       }}
                       viewport={{ once: true }}
-                      className="text-gray-400 leading-relaxed text-sm mb-8"
+                      className="text-gray-400 leading-relaxed text-sm mb-3"
                     >
                       {project.description}
                     </motion.p>

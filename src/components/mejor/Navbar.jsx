@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@heroui/react";
 import Link from "next/link";
-import logo from "@/assets/logo01.png";
+import logo from "@/assets/logo.png";
 import DropDown from "../minor/DropDown";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -29,7 +29,7 @@ const Navbar = () => {
             alt="Logo"
             width={150}
             height={50}
-            className="w-29 md:w-36 h-auto inline-block mr-2 logoAnimate"
+            className="w-29 md:w-32 h-auto inline-block mr-2 logoAnimate"
           />
         </Link>
 

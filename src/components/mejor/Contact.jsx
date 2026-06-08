@@ -102,25 +102,18 @@ export default function Contact() {
       <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full" />
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-5">
 
         {/* ── Heading ── */}
         <div ref={headingRef} className="text-center mb-16">
 
-          <motion.p
-            variants={fadeUp(0)}
-            initial="hidden"
-            animate={headingInView ? "visible" : "hidden"}
-            className="uppercase tracking-[6px] text-cyan-400 text-sm mb-3"
-          >
-            Contact
-          </motion.p>
+          
 
           <motion.h1
             variants={fadeUp(0.15)}
             initial="hidden"
             animate={headingInView ? "visible" : "hidden"}
-            className="text-4xl md:text-6xl font-black leading-tight"
+            className="text-4xl md:text-4xl font-black leading-tight"
           >
             Let’s Build
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
@@ -132,7 +125,7 @@ export default function Contact() {
             variants={fadeUp(0.3)}
             initial="hidden"
             animate={headingInView ? "visible" : "hidden"}
-            className="text-gray-400 mt-6 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
+            className="text-gray-400 mt-6 max-w-2xl mx-auto text-sm md:text-md leading-relaxed"
           >
             Have a project idea, business inquiry, or just want to say hi? Fill
             out the form and I’ll get back to you as soon as possible.
@@ -154,16 +147,11 @@ export default function Contact() {
               <p className="uppercase tracking-[5px] text-purple-400 text-sm mb-3">
                 Social Media
               </p>
-              <h2 className="text-3xl md:text-5xl font-black leading-tight">
-                To Reach Me
-                <span className="block text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-cyan-400">
-                  In Social Media
-                </span>
-              </h2>
+             
             </motion.div>
 
             {/* Social cards — প্রতিটি card আলাদা delay তে আসে */}
-            <div className="space-y-5">
+            <div className="space-y-3">
               {socials.map(({ href, icon, label, title, arrowColor, hoverBorder }, i) => (
                 <motion.a
                   key={label}
@@ -174,13 +162,13 @@ export default function Contact() {
                   initial="hidden"
                   animate={socialsInView ? "visible" : "hidden"}
                   whileHover={{ x: 6 }}          // hover এ ডানে সরে যাবে
-                  className={`group flex items-center justify-between bg-white/5 border border-white/10 ${hoverBorder} rounded-3xl px-7 py-6 transition duration-300`}
+                  className={`group flex items-center justify-between bg-white/5 border border-white/10 ${hoverBorder} rounded-3xl px-3 py-3 transition duration-300`}
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3">
                     <div>{icon}</div>
                     <div>
-                      <p className="text-gray-400 text-sm">{label}</p>
-                      <h3 className="text-2xl font-bold mt-1">{title}</h3>
+                      <p className="text-gray-400 text-xs">{label}</p>
+                      <h3 className="text-md font-bold mt-1">{title}</h3>
                     </div>
                   </div>
                   <span className={`${arrowColor} text-3xl group-hover:translate-x-1 transition`}>→</span>
@@ -192,19 +180,19 @@ export default function Contact() {
                 variants={fadeUp(socials.length * 0.08 + 0.1)}
                 initial="hidden"
                 animate={socialsInView ? "visible" : "hidden"}
-                className="group flex items-center justify-between bg-green-700/5 border border-green-400/40 rounded-3xl px-7 py-3 transition duration-300 hover:-translate-y-1"
+                className="group flex items-center justify-between bg-green-700/5 border border-green-400/40 rounded-3xl px-2 py-2 transition duration-300 hover:-translate-y-1"
               >
-                <div className="flex items-center gap-4 rounded-[2rem] px-6 py-4 w-fit">
+                <div className="flex items-center gap-4 rounded-[2rem] px-3 py-3 w-fit">
                   {/* Animated pulsing dot */}
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3df389] opacity-75" />
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-[#3df389] shadow-[0_0_10px_#3df389]" />
                   </span>
                   <div className="flex flex-col">
-                    <h3 className="text-[#3df389] font-semibold text-lg leading-tight">
+                    <h3 className="text-[#3df389] font-semibold text-md leading-tight">
                       Available for Work
                     </h3>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-gray-500 text-xs">
                       Open to freelance &amp; full-time opportunities
                     </p>
                   </div>
@@ -226,12 +214,7 @@ export default function Contact() {
               <p className="uppercase tracking-[5px] text-cyan-400 text-sm mb-3">
                 Contact Form
               </p>
-              <h2 className="text-3xl md:text-5xl font-black leading-tight">
-                Send Me A
-                <span className="block text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
-                  Quick Message
-                </span>
-              </h2>
+              
             </motion.div>
 
             {/* Form card */}
@@ -243,7 +226,7 @@ export default function Contact() {
             >
               <div className="absolute inset-0 bg-linear-to-r from-cyan-500/20 to-purple-500/20 blur-2xl rounded-[40px]" />
 
-              <form className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-8 md:p-10 space-y-6">
+              <form className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-4 md:p-6 space-y-3">
 
                 {/* Fields — staggered fade-up */}
                 {[
@@ -262,7 +245,7 @@ export default function Contact() {
                       suppressHydrationWarning
                       type={type}
                       placeholder={placeholder}
-                      className="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition"
+                      className="w-full bg-black/30 border border-white/10 rounded-2xl px-3 py-2 outline-none focus:border-cyan-400 transition"
                     />
                   </motion.div>
                 ))}
@@ -274,7 +257,7 @@ export default function Contact() {
                 >
                   <label className="text-sm text-gray-300 block mb-2">Message</label>
                   <textarea
-                    rows={5}
+                    rows={3}
                     placeholder="Write your message..."
                     className="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition resize-none"
                   />
